@@ -1,0 +1,48 @@
+int main() {
+    int num1, num2;
+    char op;
+
+    std::cout << " C++ Calculator App \n";
+   
+    // Get user input
+    std::cout << "Enter first number: ";
+    std::cin >> num1;
+
+    std::cout << "Enter operator (+, -, *, /, %): ";
+    std::cin >> op;
+
+    std::cout << "Enter second number: ";
+    std::cin >> num2;
+
+    switch (op) {
+        case '+':
+            std::cout << "Result: " << num1 << " + " << num2 << " = " << (num1 + num2) << "\n";
+            break;
+        case '-':
+            std::cout << "Result: " << num1 << " - " << num2 << " = " << (num1 - num2) << "\n";
+            break;
+        case '*':
+            std::cout << "Result: " << num1 << " * " << num2 << " = " << (num1 * num2) << "\n";
+            break;
+        case '/':
+            if (num2 == 0) {
+                std::cout << "Error: Division by zero is undefined.\n";
+            } else {
+                // Cast to double for precise floating-point division
+                std::cout << "Result: " << num1 << " / " << num2 << " = " << (static_cast<double>(num1) / num2) << "\n";
+            }
+            break;
+        case '%':
+            if (num2 == 0) {
+                std::cout << "Error: Modulo by zero is undefined.\n";
+            } else {
+                std::cout << "Result: " << num1 << " % " << num2 << " = " << (num1 % num2) << "\n";
+            }
+            break;
+        default:
+            std::cout << "Error: Invalid operator. Please use +, -, *, /, or %.\n";
+            break;
+    }
+
+    return 0;
+}
